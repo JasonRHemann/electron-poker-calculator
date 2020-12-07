@@ -22,7 +22,7 @@ const HandReader = () => {
 
   return (
     <div>
-      <p>{cardOneSuit}</p>
+      <p>{cardOneArray}</p>
     </div>
   );
 };

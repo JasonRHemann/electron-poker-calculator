@@ -18,27 +18,27 @@ function color() {
   );
 
   //Get matrix of card value
-  var matrixPoint1 = robot.getPixelColor(309, 434);
-  var matrixPoint1 = robot.getPixelColor(313, 434);
-  var matrixPoint1 = robot.getPixelColor(317, 434);
-  var matrixPoint1 = robot.getPixelColor(309, 441);
-  var matrixPoint1 = robot.getPixelColor(313, 441);
-  var matrixPoint1 = robot.getPixelColor(317, 441);
-  var matrixPoint1 = robot.getPixelColor(309, 447);
-  var matrixPoint1 = robot.getPixelColor(313, 447);
-  var matrixPoint1 = robot.getPixelColor(317, 447);
-  var cardOneMatrix = [
-    matrixPoint1,
-    matrixPoint2,
-    matrixPoint3,
-    matrixPoint4,
-    matrixPoint5,
-    matrixPoint6,
-    matrixPoint7,
-    matrixPoint8,
-    matrixPoint9,
-  ];
-  console.log(cardOneMatrix);
+  // var matrixPoint1 = robot.getPixelColor(309, 434);
+  // var matrixPoint1 = robot.getPixelColor(313, 434);
+  // var matrixPoint1 = robot.getPixelColor(317, 434);
+  // var matrixPoint1 = robot.getPixelColor(309, 441);
+  // var matrixPoint1 = robot.getPixelColor(313, 441);
+  // var matrixPoint1 = robot.getPixelColor(317, 441);
+  // var matrixPoint1 = robot.getPixelColor(309, 447);
+  // var matrixPoint1 = robot.getPixelColor(313, 447);
+  // var matrixPoint1 = robot.getPixelColor(317, 447);
+  // var cardOneMatrix = [
+  //   matrixPoint1,
+  //   matrixPoint2,
+  //   matrixPoint3,
+  //   matrixPoint4,
+  //   matrixPoint5,
+  //   matrixPoint6,
+  //   matrixPoint7,
+  //   matrixPoint8,
+  //   matrixPoint9,
+  // ];
+  // console.log(cardOneMatrix);
   return cardOneSuitPixel;
 }
 
