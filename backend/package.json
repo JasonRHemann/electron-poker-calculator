@@ -8,10 +8,13 @@
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "express": "~4.16.1",
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
+    "jimp": "^0.16.1",
     "morgan": "~1.9.1",
-    "robotjs": "^0.6.0"
+    "robotjs": "^0.6.0",
+    "tesseract.js": "^2.1.4"
   }
 }
