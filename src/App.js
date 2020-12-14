@@ -1,5 +1,6 @@
 import React from "react";
-import HandReader from "./screenReader/HandReader";
+import SuitReader from "./screenReader/SuitReader";
+import CardReader from "./screenReader/CardReader";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -8,7 +9,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <HandReader />
+        <CardReader />
+        <SuitReader />
       </header>
     </div>
   );

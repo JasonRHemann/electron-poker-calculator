@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const HandReader = () => {
+const SuitReader = () => {
   const [cardOneArray, setCardOneArray] = useState([]);
 
   useEffect(() => {
@@ -27,4 +27,4 @@ const HandReader = () => {
   );
 };
 
-export default HandReader;
+export default SuitReader;
