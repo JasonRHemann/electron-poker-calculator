@@ -48,5 +48,5 @@
     "is-dev": "^0.1.4",
     "wait-on": "^5.2.0"
   },
-  "proxy": "http://localhost:3001"
+  "proxy": "http://localhost:5000"
 }
