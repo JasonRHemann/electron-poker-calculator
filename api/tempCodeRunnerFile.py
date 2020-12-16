@@ -1,14 +1,2 @@
-import pyautogui
-
-
-def locate_image():
-
-    pic = pyautogui.screenshot('screenshot.png')
-    coords = pyautogui.locateAllOnScreen(
-        'screenshot.png')
-    print(coords)
-    print(pic)
-    return coords
-
-
-locate_image()
+im = pyautogui.screenshot(
+    str(int(time.time())) + '4.png', region=(430, 700, 95, 60))
