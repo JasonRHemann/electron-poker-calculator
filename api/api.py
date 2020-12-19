@@ -8,48 +8,28 @@ app = Flask(__name__)
 def test():
     return pyautogui.position()
 
-# @app.route('/time')
-# def get_current_time():
-#     return {'time': time.time()}
+
+@app.route('/time')
+def get_current_time():
+    return {'time': time.time()}
 
 
-# player_card_one = ["Not Found", "Not Found"]
-# player_card_two = ["Not Found", "Not Found"]
-# card_location = (300, 505, 80, 43)
-# middle = 340
-# confidence_scale = .8
+card_number_list = ["images/A.png", "images/K.png", "images/Q.png",
+                    "images/J.png", "images/T.png", "images/9.png",
+                    "images/8.png", "images/7.png", "images/6.png",
+                    "images/5.png", "images/4.png", "images/3.png",
+                    "images/2.png"]
 
 
-# suit_list = ['images/club.png', 'images/spade.png', 'images/diamond.png', 'images/heart.png', 'images/two.png',
-#              'images/three.png', 'images/four.png', 'images/five.png', 'images/six.png', 'images/seven.png', 'images/eight.png', 'images/nine.png', 'images/ten.png', 'images/jack.png', 'images/queen.png', 'images/king.png', 'images/ace.png', ]
+@app.route('/hole1')
+def locate_image():
+    for i in card_number_list:
+        coordinates = pyautogui.locateOnScreen(
+            i, confidence=0.9,  grayscale=True, region=(430, 700, 30, 25))
+
+        if coordinates is not None:
+            hole1 = (i[7:-4])
+            return{'hole': hole1}
 
 
-# @app.route('/hand')
-# def hand_reader():
-#     hand_parts = []
-#     # threading.Timer(1.0, hand_reader).start()
-#     for i in suit_list:
-#         coordinates = pyautogui.locateAllOnScreen(
-#             i, confidence=confidence_scale,  grayscale=True, region=card_location)
-#         for element in coordinates:
-#             if(element != None and element[0]) > middle:
-#                 print(element)
-#             hand_parts.append(i[7:-4])
-#             if(element != None and element[0]) < middle:
-#                 hand_parts.append(i[7:-4])
-#     print(hand_parts)
-#     hand = hand_parts[2] + " " + hand_parts[0] + \
-#         " " + hand_parts[3] + " " + hand_parts[1]
-#     print(hand)
-#     return{'hand': hand}
-# @app.route('/dealer')
-# def dealer_seat():
-#     # threading.Timer(5.0, dealer_seat).start()
-#     for idx, val in enumerate(dealer_list):
-#         im = pyautogui.screenshot()
-#         button = im.getpixel(val)
-#         if(button[0] > 200):
-#             dealer = idx
-#             print(dealer)
-#     # time.sleep(10)
-#     return{'dealer': dealer}
+locate_image()

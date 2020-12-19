@@ -1,30 +1,32 @@
+from flask import Flask
 import time
 import threading
 import pyautogui
+app = Flask(__name__)
+
 
 card_number_list = ["images/A.png", "images/K.png", "images/Q.png",
-                    "images/J.png", "images/10.png", "images/9.png",
+                    "images/J.png", "images/T.png", "images/9.png",
                     "images/8.png", "images/7.png", "images/6.png",
                     "images/5.png", "images/4.png", "images/3.png",
                     "images/2.png"]
 
 
+@app.route('/time')
+def get_current_time():
+    return {'time': time.time()}
+
+
+@app.route('/hole1')
 def locate_image():
-
-    card_number = []
-    # threading.Timer(5.0, locate_image).start()
     for i in card_number_list:
-        coordinates = pyautogui.locateAllOnScreen(
-            i, confidence=0.9,  grayscale=True)
-        print(i)
-        for element in coordinates:
-            if element is not None:
-                print(element)
-                card_number.append(i[7:-4])
+        coordinates = pyautogui.locateOnScreen(
+            i, confidence=0.9,  grayscale=True, region=(430, 700, 30, 25))
 
-    print(card_number)
-
-    return card_number
+        if coordinates is not None:
+            hole1 = (i[7:-4])
+            print(hole1)
+            return {"hole card one": hole1}
 
 
-locate_image()
+# locate_image()
