@@ -1,3 +1,6 @@
+var express = require("express");
+var router = express.Router();
+
 let robot = require("robotjs");
 let fs = require("fs");
 let Jimp = require("jimp");
@@ -20,3 +23,5 @@ for (var x = 0; x < size; x++) {
   }
 }
 jimg.write(path);
+
+module.exports = router;

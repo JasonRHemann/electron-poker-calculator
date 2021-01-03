@@ -29,7 +29,7 @@ def locate_image():
 
         if coordinates is not None:
             hole1 = (i[7:-4])
-            return{'hole': hole1}
+            return{'hole1': hole1}
 
 
 locate_image()
