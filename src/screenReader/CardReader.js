@@ -2,19 +2,18 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const CardReader = () => {
-  const [currentTime, setCurrentTime] = useState([0]);
+  const [hole1, setHole1] = useState();
 
   useEffect(() => {
-    fetch("/hand")
+    fetch("/hole1")
       .then((res) => res.json())
       .then((data) => {
-        setCurrentTime(data.hand);
+        setHole1(data.hole1);
       });
-  }, []);
-
+  });
   return (
     <div>
-      <p>The current time is {currentTime}.</p>
+      <p>{hole1}</p>
     </div>
   );
 };

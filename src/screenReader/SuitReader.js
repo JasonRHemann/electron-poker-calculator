@@ -3,17 +3,23 @@ import axios from "axios";
 
 const SuitReader = () => {
   const [cardOneArray, setCardOneArray] = useState([]);
-
+  const [currentTime, setCurrentTime] = useState();
   useEffect(() => {
     axios.get("http://localhost:3001/users").then((response) => {
       setCardOneArray(response.data);
-      console.log("res", response.data);
+      console.log("res for suit", response.data);
     });
-  }, []);
+  });
 
-  console.log("card one", cardOneArray);
+  // useEffect(() => {
+  //   fetch("/time")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setCurrentTime(data.time);
+  //     });
+  // });
 
-  let suitArrayColor = ["c70000", "0089ce", "329f28", "000000", "444444"];
+  let suitArrayColor = ["b6000d", "1a81bd", "36932b", "000000", "3f3f3f3"];
   let suitArray = ["Heart", "Diamond", "Club", "Spade", "No Cards"];
 
   var indexOfMatch = suitArrayColor.indexOf(cardOneArray.toString());
@@ -22,7 +28,7 @@ const SuitReader = () => {
 
   return (
     <div>
-      <p>{cardOneArray}</p>
+      <p>{cardOneSuit}</p>
     </div>
   );
 };
