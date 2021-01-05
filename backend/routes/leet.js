@@ -1,14 +1,11 @@
-nums = [2, 7, 11, 15];
-target = 9;
+nums = [1, 2, 3, 4];
 
-const twoSum = function (nums, target) {
-  nums = [2, 7, 11, 15];
-  target = 9;
-  arr = [];
-  console.log(target);
-  for (let i = nums.length; i < nums.length; i++) {
-    console.log(nums[i]);
+function productExceptSelf() {
+  i = 0;
+  while (i < nums.length) {
+    var newArr = nums.splice(0, 1);
+    console.log(nums);
   }
-};
+}
 
-twoSum();
+productExceptSelf(nums);
